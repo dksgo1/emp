@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import = "java.util.*" %>
+<%@ page import = "java.sql.*" %>
+<%@ page import = "vo.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 </head>
 <body>
 	<h2>부서추가</h2>
-	<form action="<%=request.getContextPath()%>/insertDeptAction.jsp">
+	<form method="post" action="<%=request.getContextPath()%>/dept/insertDeptAction.jsp">
 		<table>
 			<tr>
 				<td>부서번호</td>
