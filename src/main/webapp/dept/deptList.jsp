@@ -33,31 +33,41 @@
 		<!-- bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+		<style>
+			table {
+				margin-:auto;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>DEPT LIST</h1>
-		<div>
-			<a href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp">부서추가</a>
+		<div class="container">
+			<h2>DEPT LIST</h2>
+				<a href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp" class="btn btn-primary">부서추가</a>
+	
+			<table class="table row text-center table-striped">
+				<tr class="table-danger">
+					<th>부서번호</th>
+					<th>부서이름</th>
+					<th>수정</th>
+					<th>삭제</th>
+				</tr>
+				<%
+					for(Department d : list) { // 자바문법에서 제공하는 foreach문
+				%>
+						<tr>
+							<td><%=d.deptNo%></td>
+							<td><%=d.deptName%></td>
+							<td>
+								<a href="<%=request.getContextPath()%>/dept/updateDeptForm.jsp?dept_no=<%=d.deptNo%>">수정</a>
+							</td>
+							<td>
+								<a href="<%=request.getContextPath()%>/dept/deleteDept.jsp?dept_no=<%=d.deptNo%>">삭제</a>
+							</td>
+						</tr>
+				<%	
+					}
+				%>
+			</table>
 		</div>
-		<table>
-			<tr>
-				<th>부서번호</th>
-				<th>부서이름</th>
-				<th>수정</th>
-				<th>삭제</th>
-			</tr>
-			<%
-				for(Department d : list) { // 자바문법에서 제공하는 foreach문
-			%>
-					<tr>
-						<td><%=d.deptNo%></td>
-						<td><%=d.deptName%></td>
-						<td><a href="">수정</a></td>
-						<td><a href="">삭제</a></td>
-					</tr>
-			<%	
-				}
-			%>
-		</table>
 	</body>
 </html>
