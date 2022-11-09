@@ -13,10 +13,8 @@
 		<h1 class="text-info">INDEX</h1>
 		<ol>
 			<li><a href="<%=request.getContextPath()%>/dept/deptList.jsp" class="btn btn-warning border border-primary">부서관리</a></li>
+			<li><a href="<%=request.getContextPath()%>/emp/empList.jsp" class="btn btn-warning border border-primary">사원관리</a></li>
 		</ol>
-		<div>
-			<img src="<%=request.getContextPath()%>/img/luffy.png"/>
-		</div>
 	</div>	
 </body>
 </html>
