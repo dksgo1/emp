@@ -29,22 +29,28 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>deptList</title>
 		<!-- bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-		<style>
-			table {
-				margin-:auto;
-			}
-		</style>
 	</head>
-	<body>
-		<div class="container">
-			<h2>DEPT LIST</h2>
+	<body class="bg-info p-2 text-dark bg-opacity-25">
+		<!-- 메뉴 partial jsp 구성 -->
+		<div>
+			<jsp:include page="/inc/menu.jsp"></jsp:include>
+		</div>
+		<div class="container w-50 h-50">
+			<h2 class="text-center bg-secondary p-3">DEPT LIST</h2>
+			<%
+				if(request.getParameter("msg") != null) {
+			%>
+					<div><%=request.getParameter("msg") %></div>
+			<%
+				}
+			%>
 				<a href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp" class="btn btn-primary">부서추가</a>
 	
-			<table class="table row text-center table-striped">
+			<table class="table text-center table-striped">
 				<tr class="table-danger">
 					<th>부서번호</th>
 					<th>부서이름</th>
