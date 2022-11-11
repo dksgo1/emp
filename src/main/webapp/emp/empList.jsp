@@ -45,55 +45,62 @@
 %>	
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<!-- 메뉴 partial jsp 구성 -->
-	<div>
-		<jsp:include page="/inc/menu.jsp"></jsp:include>
-	</div>
-	<h1>사원목록</h1>
-	<div>현재 페이지 : <%=currentPage%></div>
-	<table>
-		<tr>
-			<th>사원번호</th>
-			<th>퍼스트네임</th>
-			<th>라스트네임</th>
-		</tr>
-		<%
-			for(Employee e : empList) {
-		%>
-				<tr>
-					<td><%=e.empNo%></td>
-					<td><a href=""><%=e.firstName%></a></td>
-					<td><%=e.lastName%></td>
-				</tr>
-		<%
-			}
-		%>
-	</table>
-	
-	<!-- 페이징 코드 -->
-	<div>
-		<a href="<%=request.getContextPath()%>/emp/empList.jsp?currentPage=1">처음</a>
-		<%
-			if(currentPage > 1) {
-		%>
-				<a href="<%=request.getContextPath()%>/emp/empList.jsp?currentPage=<%=currentPage-1%>">이전</a>
-		<%
-			}
-			
-			if(currentPage < lastPage) {
+	<head>
+		<meta charset="UTF-8">
+		<title>empList</title>
+		<!-- bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>	
+	</head>
+	<body class="bg-warning p-3 bg-opacity-10">
+		<!-- 메뉴 partial jsp 구성 -->
+		<div>
+			<jsp:include page="/inc/menu.jsp"></jsp:include>
+		</div>
+		<div class="container pt-2 w-25 h-25">
+			<div>
+				<h1>사원목록</h1>
+				<div>현재 페이지 : <%=currentPage%></div>
+				<table class="table table-bordered table-sm">
+					<tr>
+						<th>사원번호</th>
+						<th>퍼스트네임</th>
+						<th>라스트네임</th>
+					</tr>
+					<%
+						for(Employee e : empList) {
+					%>
+							<tr>
+								<td><%=e.empNo%></td>
+								<td><a href=""><%=e.firstName%></a></td>
+								<td><%=e.lastName%></td>
+							</tr>
+					<%
+						}
+					%>
+				</table>
 				
-			
-		%>
-				<a href="<%=request.getContextPath()%>/emp/empList.jsp?currentPage=<%=currentPage+1%>">다음</a>
-		<% 
-			}
-		%>
-		<a href="<%=request.getContextPath()%>/emp/empList.jsp?currentPage=<%=lastPage%>">마지막</a>
-	</div>
-</body>
+				<!-- 페이징 코드 -->
+				<div>
+					<a href="<%=request.getContextPath()%>/emp/empList.jsp?currentPage=1">처음</a>
+					<%
+						if(currentPage > 1) {
+					%>
+							<a href="<%=request.getContextPath()%>/emp/empList.jsp?currentPage=<%=currentPage-1%>">이전</a>
+					<%
+						}
+						
+						if(currentPage < lastPage) {
+							
+						
+					%>
+							<a href="<%=request.getContextPath()%>/emp/empList.jsp?currentPage=<%=currentPage+1%>">다음</a>
+					<% 
+						}
+					%>
+					<a href="<%=request.getContextPath()%>/emp/empList.jsp?currentPage=<%=lastPage%>">마지막</a>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

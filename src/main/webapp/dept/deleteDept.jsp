@@ -10,8 +10,8 @@
 	// 2. 요청 처리
 	Class.forName("org.mariadb.jdbc.Driver");
 	Connection conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/employees","root","java1234");
-	String sq1 = "delete from departments where dept_no = ?";
-	PreparedStatement stmt = conn.prepareStatement(sq1);
+	String sql = "delete from departments where dept_no = ?";
+	PreparedStatement stmt = conn.prepareStatement(sql);
 	stmt.setString(1, deptNo);
 	
 	// 디버깅

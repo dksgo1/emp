@@ -13,8 +13,8 @@
 	// 2. 요청 처리
 	Class.forName("org.mariadb.jdbc.Driver");
 	Connection conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/employees","root","java1234");
-	String sq1 = "SELECT dept_name deptName FROM departments WHERE dept_no = ?"; // as 사용
-	PreparedStatement stmt = conn.prepareStatement(sq1);
+	String sql = "SELECT dept_name deptName FROM departments WHERE dept_no = ?"; // as 사용
+	PreparedStatement stmt = conn.prepareStatement(sql);
 	stmt.setString(1, deptNo);
 	ResultSet rs = stmt.executeQuery(); // 0행 or 1행
 	Department dept = null;
@@ -34,7 +34,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>	
 	</head>
-	<body>
+	<body class="bg-secondary p-3 bg-opacity-25">
 		<!-- 메뉴 partial jsp 구성 -->
 		<div>
 			<jsp:include page="/inc/menu.jsp"></jsp:include>
@@ -42,17 +42,17 @@
 		<div class="container pt-5 text-center">
 			<h2>정보수정</h2>
 			<form action="<%=request.getContextPath()%>/dept/updateDeptAction.jsp" method = "post">
-			<table class="table table-striped">
-				<tr>
-					<td>부서번호</td>
-					<td><input type="text" name="deptNo" value="<%=dept.deptNo%>" readonly="readonly"></td>
-				</tr>
-				<tr>
-					<td>부서이름</td>
-					<td><input type="text" name="deptName" value="<%=dept.deptName%>"></td>
-				</tr>
-			</table>
-			<button type="submit">수정</button>
+				<table class="table table-striped">
+					<tr>
+						<td>부서번호</td>
+						<td><input type="text" name="deptNo" value="<%=dept.deptNo%>" readonly="readonly"></td>
+					</tr>
+					<tr>
+						<td>부서이름</td>
+						<td><input type="text" name="deptName" value="<%=dept.deptName%>"></td>
+					</tr>
+				</table>
+				<button type="submit">수정</button>
 			</form>
 		</div>
 	</body>

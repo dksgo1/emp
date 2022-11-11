@@ -14,6 +14,7 @@
 		<ol>
 			<li><a href="<%=request.getContextPath()%>/dept/deptList.jsp" class="btn btn-warning border border-primary">부서관리</a></li>
 			<li><a href="<%=request.getContextPath()%>/emp/empList.jsp" class="btn btn-warning border border-primary">사원관리</a></li>
+			<li><a href="<%=request.getContextPath()%>/board/boardList.jsp" class="btn btn-warning border border-primary">게시판 관리</a></li>
 		</ol>
 	</div>	
 </body>

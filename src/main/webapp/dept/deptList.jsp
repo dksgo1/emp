@@ -48,7 +48,7 @@
 			<%
 				}
 			%>
-				<a href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp" class="btn btn-primary">부서추가</a>
+				<a href="<%=request.getContextPath()%>/dept/insertDeptForm.jsp" class="btn btn-success">부서추가</a>
 	
 			<table class="table text-center table-striped">
 				<tr class="table-danger">
