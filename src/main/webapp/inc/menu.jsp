@@ -6,9 +6,9 @@
 
 <!-- partial jsp 페이지 사용할 코드 -->
 <div class="btn-group">
-<a href="<%=request.getContextPath()%>/dept/index.jsp" class="btn btn-primary">[홈으로]</a>
-<a href="<%=request.getContextPath()%>/dept/deptList.jsp" class="btn btn-primary">[부서관리]</a>
-<a href="<%=request.getContextPath()%>/emp/empList.jsp" class="btn btn-primary">[사원관리]</a>
-<a href="<%=request.getContextPath()%>/"class="btn btn-primary">[연봉관리]</a>
-<a href="<%=request.getContextPath()%>/board/boardList.jsp" class="btn btn-primary">[게시판관리]</a>
+<a href="<%=request.getContextPath()%>/dept/index.jsp" class="btn btn-primary btn-sm">[홈으로]</a>
+<a href="<%=request.getContextPath()%>/dept/deptList.jsp" class="btn btn-primary btn-sm">[부서관리]</a>
+<a href="<%=request.getContextPath()%>/emp/empList.jsp" class="btn btn-primary btn-sm">[사원관리]</a>
+<a href="<%=request.getContextPath()%>/"class="btn btn-primary btn-sm">[연봉관리]</a>
+<a href="<%=request.getContextPath()%>/board/boardList.jsp" class="btn btn-primary btn-sm">[게시판관리]</a>
 </div>

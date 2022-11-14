@@ -26,7 +26,7 @@
 		<%
 			if(msg != null) {
 		%>
-				<div><%=msg%></div>
+				<div class="text-center"><%=msg%></div>
 		<%
 			}
 		%>
