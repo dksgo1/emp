@@ -83,7 +83,7 @@
 			<label for="word">내용 검색 :</label>
 			<input type="text" name="word" id="word">
 			<button type="submit">검색</button>   
-  	 </form>
+		</form>
 		<!-- 3. 모델데이터(ArrayList<Board> 출력 -->
 		<table class="table table-hover">
 			<tr>
